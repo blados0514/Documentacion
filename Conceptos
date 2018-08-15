@@ -5,5 +5,4 @@ motor es la herramienta
 
 
 Borrar .git
-
 rm -rf .git
