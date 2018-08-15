@@ -2,3 +2,8 @@ cual es la diferencia entre base de datos y motor de base de datos ?
 
 base de datos es la coleccion de tablas almacenada en una base de datos.
 motor es la herramienta
+
+
+Borrar .git
+
+rm -rf .git
