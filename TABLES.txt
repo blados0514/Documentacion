@@ -37,3 +37,28 @@ ALTER TABLE ASSIGNMENTS ADD CONSTRAINT FK_ASSIGNMENTS_PROJECT_ID FOREIGN KEY (PR
 ALTER TABLE PROJECTS ADD CONSTRAINT FK_MANAGER_PROJECT FOREIGN KEY (MANAGER_ID) REFERENCES EMPLOYEES;
 ALTER TABLE EMPLOYEES ADD CONSTRAINT FK_MANAGER_ID FOREIGN KEY (MANAGER_ID) REFERENCES EMPLOYEES;
 
+--1.
+SELECT id, project_id, count(project_id) as number_employees FROM assignments
+Group by id, project_id
+order by To_NUmber(number_employees) desc;
+
+--2.
+SELECT Em.id, Em.name, Em.last_name  FROM employees Em
+Inner join projects Pr On Pr.manager_id = em.id
+where pr.code = 'd1373b16-b953-48ab-82b0-23ae2c7e4670';
+
+--3.
+SELECT name, salary
+FROM employees
+Where Salary between 80000 and 120000;
+
+--4.
+Select Distinct (Em.name||' - '||Em.last_name) As Full_Name, 'MANAGERS' From employees Em
+Inner Join Projects Pr On Pr.Manager_id = Em.Id;
+
+--5.
+SELECT (name||' - '|| 'Holmes Manning') AS employee_boss FROM employees;
+
+--6.
+SELECT id, name, last_name, date_of_joining FROM employees
+Order By date_of_joining asc;
