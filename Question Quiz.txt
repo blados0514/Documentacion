@@ -1,0 +1,4 @@
+un campo no clave
+
+todo los que es boyce-cop normal ya esta en tercer forma normal 
+todo los que este en tercera forma normal no posiblemente tiene que estar en boycpe- forma normal
