@@ -2,3 +2,9 @@ un campo no clave
 
 todo los que es boyce-cop normal ya esta en tercer forma normal 
 todo los que este en tercera forma normal no posiblemente tiene que estar en boycpe- forma normal
+
+1. forma normal - remover grupos repetidos
+2. forma normal - remover dependecias parciales
+3. forma normal - remover dependencias transitivas
+4. forma normal - remover dependencias multi valoradas
+5. forma normal - remover dependencias inner join
