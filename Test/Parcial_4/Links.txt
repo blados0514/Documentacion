@@ -1,0 +1,3 @@
+* https://www.techonthenet.com/oracle/functions/upper.php
+* https://www.techonthenet.com/oracle/functions/lower.php
+* https://www.techonthenet.com/oracle/functions/to_char.php
