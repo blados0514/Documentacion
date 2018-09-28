@@ -17,10 +17,23 @@ LIST BACKUP;
 SHOW ALL;
 
 
+--desmontar y montar la base de datos
 run
 {
-shutdown immediate
-startup mount
-BACKUP AS BACKUPSET DATABASE;
+	--ejecutar por pasp
+	--1. shutdown immediate
+	--2. startup mount
+	--realiza backup completo
+	--3. BACKUP AS BACKUPSET DATABASE;
+	--realiza backup para un tablespace completo
+	BACKUP AS BACKUPSET TABLESPACE PRUEBA;
 }
 
+--eliminar tablespace
+rm prueba.dbf
+
+--restaurar 
+--bajar la base de datos
+
+-restarura el tablesapce
+RESTORE TABLESAPCE PRUEBA;
