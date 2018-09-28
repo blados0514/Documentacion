@@ -1,0 +1,26 @@
+Crear Rman
+
+--verificar estado de la base de datos.
+Select  log_mode from v$database;
+
+--accede al contenedor
+contenedor docker exec -it bin/bash
+
+--ingresar a rman
+rman TARGET SYS/
+
+LIST BACKUP SUMMARY;
+--es mas detallados
+LIST BACKUP;
+
+-- OBERVAR LA CONFIGURACION 
+SHOW ALL;
+
+
+run
+{
+shutdown immediate
+startup mount
+BACKUP AS BACKUPSET DATABASE;
+}
+
