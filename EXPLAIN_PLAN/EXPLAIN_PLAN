@@ -1,0 +1,4 @@
+--Crear el explain plan
+EXPLAIN PLAN FOR SELECT * from comunas where nombre = 'CASTILAA';
+
+SELECT * FROM TABLE(DBMS_XPLAN.DISPLAY);
