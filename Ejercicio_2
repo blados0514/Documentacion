@@ -1,0 +1,32 @@
+CREATE OR REPLACE PROCEDURE SP_MOSTRAR  (AN_NUMERO NUMBER) AS 
+
+lv_retorno VARCHAR2(255):='';
+lv_retorno_f VARCHAR2(255):='';
+modulo number:=4;
+ln_contador NUMBER:=0;
+
+BEGIN
+  FOR ln_index IN REVERSE 1.. LENGTH(AN_NUMERO) LOOP
+        lv_retorno:= SUBSTR(AN_NUMERO,ln_index,1);
+        ln_contador := ln_contador + 1;
+            IF ln_contador  MOD modulo = 0 THEN
+               modulo := ln_contador + 3;
+               lv_retorno_f:= lv_retorno ||','||lv_retorno_f ;
+            ELSE
+                lv_retorno_f:= lv_retorno || lv_retorno_f;
+            END IF;
+  END LOOP;
+  
+    DBMS_OUTPUT.PUT_LINE( lv_retorno_f);
+
+END SP_MOSTRAR;
+
+CREATE OR REPLACE TRIGGER DISPARADOR 
+BEFORE INSERT ON REPRESENTATIONS 
+FOR EACH ROW
+
+DECLARE
+  
+BEGIN
+     :NEW.REPRESENTATION:= FT_INSERTAR(:OLD.NUM);
+END;
